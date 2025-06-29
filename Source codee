@@ -1,0 +1,23 @@
+from sklearn.tree import DecisionTreeClassifier
+import numpy as np
+
+# Sample data: [stress_level, sleep_hours, activity_level]
+# Labels: 0 = sad, 1 = neutral, 2 = happy
+X = np.array([
+    [8, 4, 2],
+    [6, 5, 3],
+    [3, 7, 6],
+    [2, 8, 7]
+])
+y = np.array([0, 1, 2, 2])  # Past emotional states
+
+# Train model
+model = DecisionTreeClassifier()
+model.fit(X, y)
+
+# Predict future emotion
+future_input = np.array([[5, 6, 4]])  # New day data
+predicted_emotion = model.predict(future_input)
+
+emotion_map = {0: "Sad", 1: "Neutral", 2: "Happy"}
+print("Predicted Emotion:", emotion_map[predicted_emotion[0]])
