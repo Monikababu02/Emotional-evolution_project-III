@@ -1,0 +1,46 @@
+✅ Training Data Explanation:
+python
+Copy
+Edit
+X = np.array([
+    [8, 4, 2],  # High stress, low sleep, low activity → Sad
+    [6, 5, 3],  # Moderate stress/sleep/activity → Neutral
+    [3, 7, 6],  # Low stress, good sleep/activity → Happy
+    [2, 8, 7]   # Very low stress, great sleep/activity → Happy
+])
+y = np.array([0, 1, 2, 2])
+Each list inside X is a daily record:
+
+stress_level
+
+sleep_hours
+
+activity_level
+
+And the y labels are:
+
+0 → Sad
+
+1 → Neutral
+
+2 → Happy
+
+✅ Prediction Input:
+python
+Copy
+Edit
+future_input = np.array([[5, 6, 4]])
+This means:
+
+Stress level: 5 (moderate)
+
+Sleep: 6 hours
+
+Activity level: 4 (moderate)
+
+✅ Output:
+plaintext
+Copy
+Edit
+Predicted Emotion: Neutral
+This means that the ML model predicts the person will likely be in a neutral emotional state given their current lifestyle patterns.
